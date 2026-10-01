@@ -25,6 +25,12 @@ function App() {
     className: "4P",
     specialization: "technik programista"
   };
+    const students = [
+    { id: 1, name: "Anna", className: "4P", age: 17, specialization: "Programista" },
+    { id: 2, name: "Jan", className: "4P", age: 18, specialization: "Programista" },
+    { id: 3, name: "Adam", className: "4P", age: 17, specialization: "Programista" },
+    { id: 4, name: "Daniel", className: "4P", age: 18, specialization: "Programista" }
+  ];
   return (
     <div>
 
@@ -47,6 +53,19 @@ function App() {
       <p>Klasa: {student.className}</p>
 
       <p>Kierunek: {student.specialization}</p>
+
+      {
+      students.map((student)=>(
+        <Student
+          key={student.id}
+          name={student.name}
+          className={student.className}
+          age={student.age}
+          specialization={student.specialization}
+        />
+      ))
+    }
+
     </div>
 
   );
