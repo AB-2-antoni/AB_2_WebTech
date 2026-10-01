@@ -6,6 +6,7 @@ import './App.css'
 
 import Student from './components/Student'
 import Book from './components/Book'
+import Technology from './components/Technology'
 
 function App() {
 
@@ -39,6 +40,39 @@ function App() {
     { id: 2, title: "Hobbit", author: "J.R.R. Tolkien" },
     { id: 3, title: "Lalka", author: "Bolesław Prus" }
   ];
+    const technologies = [
+    {
+      id: 1,
+      name: "React",
+      category: "Frontend",
+      hours: 30
+    },
+    {
+      id: 2,
+      name: "Node.js",
+      category: "Backend",
+      hours: 40
+    },
+    {
+      id: 3,
+      name: "MySQL",
+      category: "Database",
+      hours: 20
+    },
+    {
+      id: 4,
+      name: "Express",
+      category: "Backend",
+      hours: 25
+    },
+    {
+      id: 5,
+      name: "MongoDB",
+      category: "Baza danych",
+      hours: 20
+    }
+  ];
+
   return (
     <div>
 
@@ -79,6 +113,16 @@ function App() {
             key={book.id}
             title={book.title}
             author={book.author}
+          />
+        ))
+      }
+      {
+        technologies.map((technology) => (
+          <Technology 
+            key={technology.id}
+            title={technology.name}
+            author={technology.category}
+            hours={technology.hours}
           />
         ))
       }
