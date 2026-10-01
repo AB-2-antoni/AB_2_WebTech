@@ -4,6 +4,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
+import Student from './components/Student'
+import Book from './components/Book'
+
 function App() {
 
   const app = {
@@ -31,6 +34,11 @@ function App() {
     { id: 3, name: "Adam", className: "4P", age: 17, specialization: "Programista" },
     { id: 4, name: "Daniel", className: "4P", age: 18, specialization: "Programista" }
   ];
+  const books = [
+    { id: 1, title: "Wiedźmin", author: "Andrzej Sapkowski" },
+    { id: 2, title: "Hobbit", author: "J.R.R. Tolkien" },
+    { id: 3, title: "Lalka", author: "Bolesław Prus" }
+  ];
   return (
     <div>
 
@@ -55,16 +63,25 @@ function App() {
       <p>Kierunek: {student.specialization}</p>
 
       {
-      students.map((student)=>(
-        <Student
-          key={student.id}
-          name={student.name}
-          className={student.className}
-          age={student.age}
-          specialization={student.specialization}
-        />
-      ))
-    }
+        students.map((student)=>(
+          <Student
+            key={student.id}
+            name={student.name}
+            className={student.className}
+            age={student.age}
+            specialization={student.specialization}
+          />
+        ))
+      }
+      {
+        books.map((book) => (
+          <Book 
+            key={book.id}
+            title={book.title}
+            author={book.author}
+          />
+        ))
+      }
 
     </div>
 
