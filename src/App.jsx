@@ -7,8 +7,23 @@ import './App.css'
 import Student from './components/Student'
 import Book from './components/Book'
 import Technology from './components/Technology'
+import OnClickLekcja from './components/onClickLekcja'
+import Product from './components/Product'
+import InfoBox from './components/InfoBox'
 
 function App() {
+  const tech = [
+    {id:1, name:"React"},
+    {id:2, name:"JavaScript"},
+    {id:3, name:"CSS"}
+  ];
+
+
+  const products = [
+    {id:1, name:"Laptop", price: 1700},
+    {id:2, name:"Monitor", price:800},
+    {id:3, name:"Telefon", price:1999}
+  ];
 
   const app = {
     name: "WebTech",
@@ -76,8 +91,26 @@ function App() {
   return (
     <div>
 
-      <h1>{app.name}</h1>
-
+      
+      {
+        tech.map((tech)=>(
+          <InfoBox 
+            key={tech.id}
+            name={tech.name}
+          />
+        ))
+      }
+      
+      <OnClickLekcja/>
+      {
+        products.map((product)=>(
+          <Product
+            key={product.id}
+            name={product.name}
+            price={product.price}
+          />
+        ))
+      }
       <p>Wersja: {app.version}</p>
 
       <p>Autor: {app.author}</p>
