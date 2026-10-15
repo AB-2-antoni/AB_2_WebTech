@@ -11,6 +11,7 @@ import OnClickLekcja from './components/onClickLekcja'
 import Product from './components/Product'
 import InfoBox from './components/InfoBox'
 import Technologies3 from './components/Technologies3'
+import Counter from './components/Counter'
 
 function App() {
 
@@ -27,19 +28,25 @@ function App() {
     { id: 9, name: "PHP", category: "Backend", hours: 35, image: "php.webp" }
   ];
 
-  return (
 
-    <div className="TechList">
-      {technologies3.map((tech) => (
-        <Technologies3
-          key={tech.id}
-          name={tech.name}
-          category={tech.category}
-          hours={tech.hours}
-          image={tech.image}
-        />
-      ))}
+  return (
+    <div>
+      <Counter>
+        
+      </Counter>
+      <div className="TechList">
+        {technologies3.map((tech) => (
+          <Technologies3
+            key={tech.id}
+            name={tech.name}
+            category={tech.category}
+            hours={tech.hours}
+            image={tech.image}
+          />
+        ))}
+      </div>
     </div>
+
   );
 }
 
